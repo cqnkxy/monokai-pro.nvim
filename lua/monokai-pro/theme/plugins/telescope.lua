@@ -9,35 +9,29 @@ return {
     local is_clear = vim.tbl_contains(config.background_clear or {}, "telescope")
 
     local transparent_bg = c.editor.background
-    local transparent_bg_border = c.base.dimmed2
-    local preview_bg = c.base.dimmed5
-    local prompt_bg = colors.lighten(c.base.dimmed5, 10)
-    local result_bg = c.base.dimmed5
-    local common_fg = colors.lighten(c.sideBar.foreground, 30)
+    local transparent_bg_border = c.float.border
+    local result_bg = c.float.background
+    local preview_bg = colors.blend(c.float.background, 0.8, c.base.black)
+    local prompt_bg = colors.lighten(c.float.background, 5)
+    local common_fg = c.editor.foreground
 
     -- stylua: ignore
     return {
-      TelescopeSelection = is_clear and {
-        bg = colors.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),
-        bold = true,
-      } or {
-        bg = colors.blend(c.base.green, 0.2, result_bg),
+      TelescopeSelection = {
+        bg = c.list.activeSelectionBackground,
         bold = true,
       },
 
-      TelescopeSelectionCaret = is_clear and {
-        bg = colors.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),
-        bold = true,
-      } or {
-        bg = colors.blend(c.base.green, 0.2, result_bg),
-        fg = c.base.green,
+      TelescopeSelectionCaret = {
+        bg = c.list.activeSelectionBackground,
+        fg = c.base.blue,
       },
 
-      TelescopeNormal = is_clear and { bg = c.editor.background, fg = common_fg } or { bg = c.editorHoverWidget.background, fg = common_fg },
+      TelescopeNormal = is_clear and { bg = c.editor.background, fg = common_fg } or { bg = result_bg, fg = common_fg },
 
       TelescopePromptCounter = { fg = c.base.red, bold = true },
 
-      TelescopeBorder = is_clear and { bg = c.editor.background, fg = c.tab.unfocusedActiveBorder } or { bg = c.editor.background, fg = c.editorHoverWidget.background },
+      TelescopeBorder = is_clear and { bg = c.editor.background, fg = transparent_bg_border } or { bg = result_bg, fg = result_bg },
 
       TelescopeMatching = { fg = c.base.blue, bold = true },
       TelescopePreviewLine = { link = "TelescopeSelection" },

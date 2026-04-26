@@ -157,6 +157,14 @@
 ---@field magenta string
 ---@field cyan string
 ---@field white string
+---@field bright_black string
+---@field bright_red string
+---@field bright_green string
+---@field bright_yellow string
+---@field bright_blue string
+---@field bright_magenta string
+---@field bright_cyan string
+---@field bright_white string
 ---@field dimmed1 string
 ---@field dimmed2 string
 ---@field dimmed3 string
@@ -192,7 +200,12 @@
 ---@field notificationsErrorIcon MonokaiPro.Scheme.NotificationsErrorIcon
 ---@field notificationsInfoIcon MonokaiPro.Scheme.NotificationsInfoIcon
 ---@field notificationsWarningIcon MonokaiPro.Scheme.NotificationsWarningIcon
+---@field float MonokaiPro.Scheme.Float
 ---@field base MonokaiPro.Scheme.Base
+
+---@class MonokaiPro.Scheme.Float
+---@field background string
+---@field border string
 
 local colors = require("monokai-pro.colors")
 
@@ -223,6 +236,12 @@ function M.build(palette, config)
     wordHighlightBackground = colors.blend(p.text, 0.15, p.background),
     selectionHighlightBackground = colors.blend(p.text, 0.15, p.background),
     wordHighlightStrongBackground = colors.blend(p.text, 0.15, p.background),
+  }
+
+  -- Floating windows
+  scheme.float = {
+    background = p.dark1,
+    border = p.dimmed5,
   }
 
   scheme.editorLineNumber = {
@@ -408,6 +427,14 @@ function M.build(palette, config)
     magenta = p.accent6,
     cyan = p.accent5,
     white = p.text,
+    bright_black = p.dimmed3,
+    bright_red = colors.lighten(p.accent1, 15),
+    bright_green = colors.lighten(p.accent4, 15),
+    bright_yellow = colors.lighten(p.accent3, 15),
+    bright_blue = colors.lighten(p.accent2, 15),
+    bright_magenta = colors.lighten(p.accent6, 15),
+    bright_cyan = colors.lighten(p.accent5, 15),
+    bright_white = colors.lighten(p.text, 15),
     dimmed1 = p.dimmed1,
     dimmed2 = p.dimmed2,
     dimmed3 = p.dimmed3,

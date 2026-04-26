@@ -74,46 +74,31 @@ return {
       NormalNC = { bg = scheme.editor.background, fg = scheme.editor.foreground },
 
       -- Floating windows
-      NormalFloat = float_win_clear and {
-        bg = scheme.editor.background,
-        fg = scheme.editorSuggestWidget.foreground,
-      } or {
-        bg = scheme.base.black,
-        fg = scheme.base.dimmed1,
+      NormalFloat = {
+        bg = float_win_clear and scheme.editor.background or scheme.float.background,
+        fg = scheme.editor.foreground,
       },
-      FloatBorder = float_win_clear and {
-        bg = scheme.editor.background,
-        fg = scheme.editorSuggestWidget.foreground,
-      } or {
-        bg = scheme.editor.background,
-        fg = scheme.base.black,
+      FloatBorder = {
+        bg = float_win_clear and scheme.editor.background or scheme.float.background,
+        fg = float_win_clear and scheme.base.dimmed3 or scheme.float.border,
       },
-      FloatTitle = float_win_clear and {
-        bg = scheme.editor.background,
-        fg = scheme.base.yellow,
+      FloatTitle = {
+        bg = float_win_clear and scheme.editor.background or scheme.base.yellow,
+        fg = float_win_clear and scheme.base.yellow or scheme.base.black,
         bold = true,
-      } or {
-        bg = scheme.base.yellow,
-        fg = scheme.base.black,
       },
 
       -- Popup menu
-      Pmenu = float_win_clear and {
-        bg = scheme.editor.background,
-        fg = scheme.editorSuggestWidget.foreground,
-      } or {
-        bg = scheme.editorSuggestWidget.background,
-        fg = scheme.editorSuggestWidget.foreground,
+      Pmenu = {
+        bg = float_win_clear and scheme.editor.background or scheme.float.background,
+        fg = scheme.editor.foreground,
       },
-      PmenuSel = float_win_clear and {
-        bg = colors.blend(scheme.editorSuggestWidget.selectedBackground, 0.7, scheme.editor.background),
-        bold = true,
-      } or {
-        bg = scheme.editorSuggestWidget.selectedBackground,
+      PmenuSel = {
+        bg = colors.blend(scheme.base.yellow, 0.3, scheme.float.background),
         bold = true,
       },
-      PmenuSbar = { bg = colors.lighten(scheme.editorSuggestWidget.background, -10) },
-      PmenuThumb = { bg = scheme.scrollbarSlider.hoverBackground },
+      PmenuSbar = { bg = scheme.float.background },
+      PmenuThumb = { bg = scheme.base.dimmed3 },
 
       -- Search
       Search = { bg = scheme.editor.findMatchHighlightBackground },

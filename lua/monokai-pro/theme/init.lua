@@ -10,28 +10,28 @@ local M = {}
 ---@param scheme MonokaiPro.Scheme
 local function set_terminal_colors(scheme)
   vim.g.terminal_color_0 = scheme.base.black
-  vim.g.terminal_color_8 = scheme.base.dimmed3
+  vim.g.terminal_color_8 = scheme.base.bright_black
 
   vim.g.terminal_color_7 = scheme.base.white
-  vim.g.terminal_color_15 = scheme.base.white
+  vim.g.terminal_color_15 = scheme.base.bright_white
 
   vim.g.terminal_color_1 = scheme.base.red
-  vim.g.terminal_color_9 = scheme.base.red
+  vim.g.terminal_color_9 = scheme.base.bright_red
 
   vim.g.terminal_color_2 = scheme.base.green
-  vim.g.terminal_color_10 = scheme.base.green
+  vim.g.terminal_color_10 = scheme.base.bright_green
 
   vim.g.terminal_color_3 = scheme.base.yellow
-  vim.g.terminal_color_11 = scheme.base.yellow
+  vim.g.terminal_color_11 = scheme.base.bright_yellow
 
   vim.g.terminal_color_4 = scheme.base.blue
-  vim.g.terminal_color_12 = scheme.base.blue
+  vim.g.terminal_color_12 = scheme.base.bright_blue
 
   vim.g.terminal_color_5 = scheme.base.magenta
-  vim.g.terminal_color_13 = scheme.base.magenta
+  vim.g.terminal_color_13 = scheme.base.bright_magenta
 
   vim.g.terminal_color_6 = scheme.base.cyan
-  vim.g.terminal_color_14 = scheme.base.cyan
+  vim.g.terminal_color_14 = scheme.base.bright_cyan
 end
 
 --- Build the complete highlight table
