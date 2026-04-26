@@ -23,8 +23,7 @@ return {
 
       -- Directory
       Directory = {
-        bg = scheme.editorGroupHeader.tabsBackground,
-        fg = scheme.statusBar.foreground,
+        fg = scheme.base.blue,
       },
 
       -- Diff highlights

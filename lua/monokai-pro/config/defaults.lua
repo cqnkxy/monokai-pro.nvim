@@ -86,6 +86,8 @@ local defaults = {
     "telescope",
     "renamer",
     "notify",
+    "nerdtree",
+    "float_win",
   },
   disabled_plugins = {},
   plugins = {

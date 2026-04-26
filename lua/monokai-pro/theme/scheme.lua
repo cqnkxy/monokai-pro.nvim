@@ -360,7 +360,7 @@ function M.build(palette, config)
 
   -- Status bar colors
   scheme.statusBar = {
-    background = p.dark2,
+    background = p.background,
     foreground = p.dimmed3,
     activeForeground = p.dimmed1,
   }
