@@ -67,7 +67,7 @@ return {
       MoreMsg = { fg = scheme.base.yellow },
 
       -- Non-text characters
-      NonText = { fg = scheme.editor.background },
+      NonText = { fg = scheme.base.dimmed4 },
 
       -- Normal text
       Normal = { bg = scheme.editor.background, fg = scheme.editor.foreground },

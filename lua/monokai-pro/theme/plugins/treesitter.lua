@@ -148,14 +148,14 @@ return {
       ["@text.strong.latex"]                = { bold = true },
 
       -- Language specific: Markdown
-      ["@conceal.markdown"]                 = { bg = c.base.black },
+      ["@conceal.markdown"]                 = { bg = "NONE" },
       ["@markup.italic.markdown_inline"]    = { italic = true },
       ["@markup.link.label.markdown_inline"]= { fg = c.base.red },
       ["@markup.link.url.markdown_inline"]  = { fg = c.base.green, underline = true },
-      ["@markup.raw.block.markdown"]        = { bg = c.base.black },
-      ["@markup.raw.delimiter.markdown"]    = { bg = c.base.black, fg = c.base.dimmed2 },
+      ["@markup.raw.block.markdown"]        = { bg = "NONE" },
+      ["@markup.raw.delimiter.markdown"]    = { bg = "NONE", fg = c.base.dimmed2 },
       ["@markup.strong.markdown_inline"]    = { bold = true },
-      ["@none.markdown"]                    = { bg = c.base.black },
+      ["@none.markdown"]                    = { bg = "NONE" },
       ["@punctuation.special.markdown"]     = { fg = c.base.dimmed2 },
       ["@text.emphasis.markdown_inline"]    = { fg = c.base.white, italic = true },
       ["@text.literal.block.markdown"]      = { bg = c.editor.background },
